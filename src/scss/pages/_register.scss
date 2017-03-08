@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Register page
+   ========================================================================== */
+
+.banner-register {
+    background-image: url(../img/register-page-banner-900x257.jpg);
+}
+
+.aca-waiver-links {
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+        padding: 1.1em;
+        list-style: none;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    a {
+        padding-top: 20px;
+    }
+}

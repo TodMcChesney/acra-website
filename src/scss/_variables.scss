@@ -1,0 +1,29 @@
+// ==========================================================================
+// Breakpoints
+// ==========================================================================
+
+$mobile: "only screen and (max-width : 874px)";
+$mobile-sidebar: "only screen and (max-width : 740px)";
+
+
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+// Blue for header and footer border, nav, and links
+$med-blue: #009ded;
+
+// Blue for link hover
+$dark-blue: darken($med-blue, 12%);
+
+// Header, footer, and column background, and image border
+$dark-grey: #1f1f1f;
+
+// Background
+$white: #fff;
+
+// Main text
+$text-grey: #444;
+
+// Footer and column text
+$text-white: #fff;

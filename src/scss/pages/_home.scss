@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Home page
+   ========================================================================== */
+
+.banner-home {
+    background-image: url(../img/home-page-banner-900x257.jpg);
+}
+
+#content-home {
+    float: left;
+    width: 58%;
+    margin-right: 3%;
+
+    .first-paragraph {
+        margin-top: 0;
+    }
+
+    @media #{$mobile} {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.content-home-sidebar {
+    float: left;
+    width: 35%;
+    box-sizing: content-box;
+    padding: 0 2%;
+    margin-bottom: 15px;
+
+    @media #{$mobile} {
+        width:96%;
+        margin-bottom: 10px;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    h3 {
+        color: $text-white;
+    }
+}
+
+.content-home-sidebar__lists {
+    @media #{$mobile} {
+        float: left;
+        padding: 0 5%;
+    }
+
+    @media #{$mobile-sidebar} {
+        float: none;
+        max-width: 262px;
+        margin: 0 auto;
+    }
+}

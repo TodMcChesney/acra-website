@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Volunteers page
+   ========================================================================== */
+
+.banner-volunteers {
+    background-image: url(../img/volunteers-page-banner-900x257.jpg);
+}
+
+.scroll-down-msg {
+    display: none;
+    margin-top: 0;
+    text-align: center;
+
+    @media #{$mobile-sidebar} {
+        display: block;
+    }
+}
+
+.volunteers-signup-form {
+    float: right;
+    padding: 15px;
+    margin: 0 0 15px 15px;
+
+    @media #{$mobile-sidebar} {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+    }
+}

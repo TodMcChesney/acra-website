@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Results page
+   ========================================================================== */
+
+.banner-results {
+    background-image: url(../img/results-page-banner-900x257.jpg);
+}
+
+#content-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content-results-lists {
+    padding: 1%;
+    margin: 15px;
+
+    h2,
+    ul {
+        margin: 1em;
+        color: $text-white;
+    }
+}

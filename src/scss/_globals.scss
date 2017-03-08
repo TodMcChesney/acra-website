@@ -1,0 +1,225 @@
+/* ==========================================================================
+   General
+   ========================================================================== */
+
+body {
+    background: $dark-grey;
+    color: $text-grey;
+    font-family: Roboto;
+}
+
+.container {
+    max-width: 900px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+a {
+    color: $med-blue;
+    text-decoration: none;
+    transition: .3s;
+
+    &:hover {
+        color: $dark-blue;
+        text-decoration: underline;
+    }
+}
+
+.site_title {
+    font: bold 1.4em Ubuntu;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Ubuntu;
+}
+
+h1 {
+    margin: 0 0 1em 0;
+    font-size: 1.2em;
+}
+
+h2 {
+    font-size: 1.1em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+abbr[title] {
+    text-decoration: none;
+}
+
+/* Clearfix for float*/
+.cf::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+/* Fade in for page loads */
+@keyframes fadeIn {
+    from {
+        opacity:0;
+    } to {
+        opacity:1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: .7s;
+}
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+header {
+    width: 100%;
+    height: 76px;
+    border-bottom: 3px solid $med-blue;
+    background-color: $dark-grey;
+}
+
+#facebook-icon {
+    float: right;
+
+    img {
+        border-radius: 5px;
+        margin: 15px 0;
+    }
+}
+
+#nav-icon {
+    display: none;
+    width: 46px;
+    height: 46px;
+    margin: 15px 0;
+    background: $med-blue url(../img/nav-icon.svg) center;
+}
+
+nav {
+
+    ul {
+        display: flex;
+        padding: 28px 0;
+        margin: 0 auto;
+        list-style: none;
+    }
+
+    li {
+        font-family: Ubuntu;
+        font-weight: 700;
+        font-size: 1.08em;
+        text-align: center;
+
+        a {
+            /* Makes clickable area of link larger */
+            padding: 10px;
+        }
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.current {
+    color: #777;
+}
+
+/* Mobile Nav Media Query
+   ========================================================================== */
+
+@media #{$mobile} {
+    #nav-icon {
+        display: inline-block;
+        border-radius: 5px;
+    }
+
+    nav {
+        ul,
+        nav:active ul {
+            position: absolute;
+            z-index: 9;
+            top: 57px;
+            left: 5%;
+            display: none;
+            width: 122px;
+            padding: 10px;
+            border: 4px solid $med-blue;
+            border-radius: 0 5px 5px 5px;
+            background-color: $white;
+        }
+
+        li {
+            width: 100%;
+        }
+
+        &:hover ul,
+        a {
+            display: block;
+        }
+    }
+}
+
+
+/* ==========================================================================
+   Section
+   ========================================================================== */
+
+section {
+    padding: 15px 0 10px 0;
+    background-color: $white;
+}
+
+.banner {
+    box-sizing: border-box;
+    width: 100%;
+    border: 3px solid $dark-grey;
+    border-radius: 5px;
+    background-size: cover;
+}
+
+#logo {
+    width: 33%;
+    margin: 3%;
+}
+
+.form {
+    width: 100%;
+    padding: 3% 3% 0;
+    margin: 15px auto;
+}
+
+.dark-box {
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: $dark-grey;
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+    width: 100%;
+    height: 100%;
+    border-top: 3px solid $med-blue;
+    background-color: $dark-grey;
+    color: $text-white;
+
+    p {
+        margin: 22px 0;
+        text-align: center;
+        font-size: .85em;
+        line-height: 1.5;
+    }
+}

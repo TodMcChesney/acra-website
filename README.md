@@ -4,10 +4,10 @@ the responsive features are coded in CSS, no JavaScript was used.
 
 ## Getting Started
 To get this project up and running for development and testing you will need to
-get Gulp setup.
+get gulp setup.
 
 ### Requires
-- Node.js v4
+- Node.js
 - Ruby
 - Sass >= v3.4
 
@@ -16,8 +16,8 @@ From the command line in the root project folder run:
 
 ```$ npm install```
 
-This will install Gulp locally with all the necessary modules. I do not like to
-install Gulp globally, so I use npm scripts to run my Gulp tasks instead.
+This will install gulp locally with all the necessary modules. I use npm
+scripts to run my gulp tasks.
 
 ### Running Dev Environment
 
@@ -30,7 +30,7 @@ site after any changes are saved.
 
 ### Building Production Code
 
-```$ npm run gulp-build```
+```$ npm run gulpBuild```
 
 This task deletes the contents of the 'dist' folder, minifies the CSS and HTML,
 and copies all production files to the clean 'dist' folder.

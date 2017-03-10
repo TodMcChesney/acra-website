@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "gulp": "gulp",
-    "gulp-build": "gulp build"
+    "gulpBuild": "gulp build"
   },
   "author": "Tod McChesney",
   "license": "ISC",

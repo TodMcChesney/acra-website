@@ -10,9 +10,8 @@ const processhtml = require('gulp-processhtml');
 const htmlmin = require('gulp-htmlmin');
 
 /** Dev tasks
-* 'gulp compile:sass' (Compile Sass to CSS adding vendor prefixes and sourcemaps)
-* 'gulp browserSync' (Spin up localhost server and initiate browser sync)
-* 'gulp' (Initialize dev enviroment and watch for changes)
+* From the CLI use npm script to run tasks:
+* 'npm run gulp' (Runs all dev tasks in sequence and watches for changes)
 */
 
 // compile:sass
@@ -44,7 +43,7 @@ gulp.task('browserSync', () =>
     })
 );
 
-// gulp (Set default 'gulp' task to run dev enviroment and watch for changes)
+// gulp (Set default 'gulp' task to run all dev tasks and watch for changes)
 gulp.task('default', ['browserSync', 'compile:sass'], () => {
     gulp.watch('src/scss/**/*.scss', ['compile:sass']);
     gulp.watch('src/*.html', browserSync.reload);
@@ -52,11 +51,8 @@ gulp.task('default', ['browserSync', 'compile:sass'], () => {
 });
 
 /** Production tasks
-* 'gulp clean:dist' (Delete contents of dist folder)
-* 'gulp minify:css' (Minify CSS and rename to styles.min.css)
-* 'gulp minify:html' (Replace CSS stylesheet link with .min version and minify html)
-* 'gulp copy' (Copy all other files to dist folder)
-* 'gulp build' (Runs all production tasks in sequence to build dist folder)
+* From the CLI use npm script to run tasks:
+* 'npm run gulpBuild' (Runs all production tasks in sequence to build dist folder)
 */
 
 // clean:dist

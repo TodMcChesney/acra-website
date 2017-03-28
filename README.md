@@ -2,6 +2,8 @@
 This is the source code for the Alabama Cup Racing Association website. All of
 the responsive features are coded in CSS, no JavaScript was used.
 
+![screenshot](/screenshot.png)
+
 ## Getting Started
 To get this project up and running for development and testing you will need to
 get gulp setup.

@@ -10,8 +10,8 @@ const processhtml = require('gulp-processhtml');
 const htmlmin = require('gulp-htmlmin');
 
 /** Dev tasks
-* From the CLI use npm script to run tasks:
-* $ npm run gulp (Runs all dev tasks in sequence and watches for changes)
+* Run task from the CLI:
+* $ gulp (Runs all dev tasks in sequence and watches for changes)
 */
 
 // compile:sass
@@ -51,8 +51,8 @@ gulp.task('default', ['browserSync', 'compile:sass'], () => {
 });
 
 /** Production tasks
-* From the CLI use npm script to run tasks:
-* $ npm run gulpBuild (Runs all production tasks in sequence to build dist folder)
+* Run task from the CLI:
+* $ gulp build (Runs all production tasks in sequence to build dist folder)
 */
 
 // clean:dist

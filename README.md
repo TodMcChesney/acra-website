@@ -12,18 +12,18 @@ get gulp setup.
 - Node.js
 - Ruby
 - Sass >= v3.4
+- gulp-cli (installed globally)
 
 ### Install
 From the command line in the root project folder run:
 
 ```$ npm install```
 
-This will install gulp locally with all the necessary modules. I use npm
-scripts to run my gulp tasks.
+This will install gulp locally with all the necessary modules.
 
 ### Running Dev Environment
 
-```$ npm run gulp```
+```$ gulp```
 
 This task compiles the Sass to CSS with source maps, auto-prefixes the CSS,
 spins up a localhost server, and watches for changes to all files in the 'src'
@@ -32,7 +32,7 @@ site after any changes are saved.
 
 ### Building Production Code
 
-```$ npm run gulpBuild```
+```$ gulp build```
 
 This task deletes the contents of the 'dist' folder, minifies the CSS and HTML,
 and copies all production files to the clean 'dist' folder.

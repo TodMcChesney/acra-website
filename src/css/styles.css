@@ -654,7 +654,7 @@ footer {
   justify-content: center; }
 
 .content-results-lists {
-  padding: 1%;
+  padding: 10px;
   margin: 15px; }
   .content-results-lists h2,
   .content-results-lists ul {

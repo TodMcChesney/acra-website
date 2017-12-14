@@ -1,3 +1,6 @@
+/* jshint node: true, esversion: 6 */
+'use strict';
+
 const gulp = require('gulp');
 const sass = require('gulp-ruby-sass');
 const autoprefixer = require('gulp-autoprefixer');
@@ -39,7 +42,8 @@ gulp.task('browserSync', () =>
     browserSync.init({
         server: {
             baseDir: 'src'
-        }
+        },
+        browser: 'chrome'
     })
 );
 

@@ -483,7 +483,7 @@ header {
   width: 46px;
   height: 46px;
   margin: 15px 0;
-  background: #009ded url(../img/nav-icon.svg) center; }
+  background: #009ded url("../img/nav-icon.svg") center; }
 
 nav ul {
   display: -ms-flexbox;
@@ -576,7 +576,7 @@ footer {
    Home page
    ========================================================================== */
 .banner-home {
-  background-image: url(../img/home-page-banner-900x257.jpg); }
+  background-image: url("../img/home-page-banner-900x257.jpg"); }
 
 #content-home {
   float: left;
@@ -620,7 +620,7 @@ footer {
    Register page
    ========================================================================== */
 .banner-register {
-  background-image: url(../img/register-page-banner-900x257.jpg); }
+  background-image: url("../img/register-page-banner-900x257.jpg"); }
 
 .aca-waiver-links {
   padding-left: 0; }
@@ -637,13 +637,13 @@ footer {
    Races page
    ========================================================================== */
 .banner-races {
-  background-image: url(../img/races-page-banner-900x257.jpg); }
+  background-image: url("../img/races-page-banner-900x257.jpg"); }
 
 /* ==========================================================================
    Results page
    ========================================================================== */
 .banner-results {
-  background-image: url(../img/results-page-banner-900x257.jpg); }
+  background-image: url("../img/results-page-banner-900x257.jpg"); }
 
 #content-results {
   display: -ms-flexbox;
@@ -665,7 +665,7 @@ footer {
    Volunteers page
    ========================================================================== */
 .banner-volunteers {
-  background-image: url(../img/volunteers-page-banner-900x257.jpg); }
+  background-image: url("../img/volunteers-page-banner-900x257.jpg"); }
 
 .scroll-down-msg {
   display: none;
@@ -689,7 +689,7 @@ footer {
    Officers
    ========================================================================== */
 .banner-officers {
-  background-image: url(../img/officers-page-banner-900x257.jpg); }
+  background-image: url("../img/officers-page-banner-900x257.jpg"); }
 
 .content-officers {
   position: relative;
@@ -717,13 +717,13 @@ footer {
    Contact page
    ========================================================================== */
 .banner-contact {
-  background-image: url(../img/contact-page-banner-900x257.jpg); }
+  background-image: url("../img/contact-page-banner-900x257.jpg"); }
 
 /* ==========================================================================
    404 page
    ========================================================================== */
 .banner-404 {
-  background-image: url(../img/404-page-banner-900x257.jpg); }
+  background-image: url("../img/404-page-banner-900x257.jpg"); }
 
 
 

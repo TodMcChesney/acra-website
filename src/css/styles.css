@@ -445,6 +445,12 @@ h3 {
 abbr[title] {
   text-decoration: none; }
 
+.bold {
+  font-weight: bold; }
+
+.underline {
+  text-decoration: underline; }
+
 /* Clearfix for float*/
 .cf::after {
   display: table;
@@ -724,6 +730,12 @@ footer {
    ========================================================================== */
 .banner-404 {
   background-image: url("../img/404-page-banner-900x257.jpg"); }
+
+/* ==========================================================================
+   FAQ page
+   ========================================================================== */
+.banner-faq {
+  background-image: url("../img/faq-page-banner-900x257.jpg"); }
 
 
 

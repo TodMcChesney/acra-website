@@ -52,6 +52,14 @@ abbr[title] {
     text-decoration: none;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
 /* Clearfix for float*/
 .cf::after {
     display: table;

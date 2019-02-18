@@ -628,16 +628,23 @@ footer {
 .banner-register {
   background-image: url("../img/register-page-banner-900x257.jpg"); }
 
-.aca-waiver-links {
+.external-link {
   padding-left: 0; }
-  .aca-waiver-links li {
+  .external-link li {
     display: inline-block;
     padding: 1.1em;
     list-style: none;
     font-size: 1.1em;
     font-weight: bold; }
-  .aca-waiver-links a {
+  .external-link a {
     padding-top: 20px; }
+
+.collage img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border: 3px solid #1f1f1f;
+  border-radius: 5px; }
 
 /* ==========================================================================
    Races page

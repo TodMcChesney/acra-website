@@ -6,7 +6,7 @@
     background-image: url("../img/register-page-banner-900x257.jpg");
 }
 
-.aca-waiver-links {
+.external-link {
     padding-left: 0;
 
     li {
@@ -19,5 +19,15 @@
 
     a {
         padding-top: 20px;
+    }
+}
+
+.collage {
+    img {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        border: 3px solid $dark-grey;
+        border-radius: 5px;
     }
 }

@@ -1,99 +1,105 @@
-/* jshint node: true, esversion: 6 */
+/* jshint node: true */
 'use strict';
 
-const gulp = require('gulp');
-const sass = require('gulp-ruby-sass');
-const autoprefixer = require('gulp-autoprefixer');
+const {src, dest, watch, series, parallel} = require('gulp');
+const sass = require('gulp-dart-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const browserSync = require('browser-sync');
+const postcss = require('gulp-postcss');
+const autoprefixer = require ('autoprefixer');
+const browserSync = require('browser-sync').create();
 const rm = require('gulp-rm');
-const cssnano = require('gulp-cssnano');
 const rename = require('gulp-rename');
-const processhtml = require('gulp-processhtml');
+const cssnano = require('cssnano');
+const htmlreplace = require('gulp-html-replace');
 const htmlmin = require('gulp-htmlmin');
 
-/** Dev tasks
-* Run task from the CLI:
-* $ gulp (Runs all dev tasks in sequence and watches for changes)
-*/
 
-// compile:sass
-gulp.task('compile:sass', () =>
-    sass('src/scss/**/*.scss', {
-        sourcemap: true
-    })
-    .on('error', sass.logError)
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
-    .pipe(sourcemaps.write('maps', {
-        includeContent: false,
-        sourceRoot: 'source'
-    }))
-    .pipe(gulp.dest('src/css'))
-    .pipe(browserSync.reload({
-        stream: true
-    }))
-);
+// Running dev tasks from the CLI:
+// $ gulp (Runs all dev tasks in sequence and watches for changes)
 
-// browserSync
-gulp.task('browserSync', () =>
+// Compile Sass
+function compileSass() {
+    return src('src/scss/**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss([autoprefixer()]))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(dest('src/css'));
+}
+
+// Start Browsersync server
+function startServer(done) {
     browserSync.init({
         server: {
             baseDir: 'src'
         },
         browser: 'chrome'
-    })
-);
+    });
+    done();
+}
 
-// gulp (Set default 'gulp' task to run all dev tasks and watch for changes)
-gulp.task('default', ['browserSync', 'compile:sass'], () => {
-    gulp.watch('src/scss/**/*.scss', ['compile:sass']);
-    gulp.watch('src/*.html', browserSync.reload);
-    gulp.watch('src/img/*.+(png|jpg|svg)', browserSync.reload);
-});
+// Reload web page
+function reload(done) {
+    browserSync.reload();
+    done();
+}
 
-/** Production tasks
-* Run task from the CLI:
-* $ gulp build (Runs all production tasks in sequence to build dist folder)
-*/
+// Watch for file changes and fire reload
+function watchChanges(done) {
+    watch('src/scss/**/*.scss', series(compileSass, reload));
+    watch(['src/*.html', 'src/doc/**.*', 'src/img/**.*'], reload);
+    done();
+}
 
-// clean:dist
-gulp.task('clean:dist', () =>
-    gulp.src('dist/**/*', {
+// Export the default Gulp task and assign dev tasks to be run in series
+exports.default = series(compileSass, startServer, watchChanges);
+
+
+// Run build task from the CLI:
+// $ gulp build (Runs all production tasks in sequence to build dist folder)
+
+// Clean the Dist folder
+function cleanDist() {
+    return src('dist/**/*', {
         read: false
     })
-    .pipe(rm())
-);
+    .pipe(rm());
+}
 
-// minify:css
-gulp.task('minify:css', ['clean:dist'], () =>
-    gulp.src('src/css/styles.css')
-    .pipe(cssnano())
+// Minify CSS
+function minifyCSS(done) {
+    src('src/css/styles.css')
+    .pipe(postcss([cssnano()]))
     .pipe(rename({
         suffix: '.min'
     }))
-    .pipe(gulp.dest('dist/css'))
-);
+    .pipe(dest('dist/css'));
+    done();
+}
 
-// minify:html
-gulp.task('minify:html', ['clean:dist'], () =>
-    gulp.src('src/*.html')
-    .pipe(processhtml())
-    .pipe(htmlmin({
-        collapseWhitespace: true
+// Minify HTML
+function minifyHTML(done) {
+    src('src/*.html')
+    .pipe(htmlreplace({
+        'css': 'css/styles.min.css'
     }))
-    .pipe(gulp.dest('dist'))
-);
+    .pipe(htmlmin({
+        collapseWhitespace: true,
+        removeComments: true,
+        minifyJS: true
+    }))
+    .pipe(dest('dist'));
+    done();
+}
 
-// copy
-gulp.task('copy', ['clean:dist'], () =>
-    gulp.src(['src/doc/**/*', 'src/img/**/*.+(png|jpg|svg)', 'src/*.!(html)'], {
+// Copy all remaining files to Dist folder
+function copy(done) {
+    src(['src/img/**/*.*', 'src/doc/**/*.*', 'src/*.!(html)'], {
         base: 'src'
     })
-    .pipe(gulp.dest('dist'))
-);
+    .pipe(dest('dist'));
+    done();
+}
 
-// build
-gulp.task('build', ['clean:dist', 'minify:css', 'copy', 'minify:html']);
+// Export the build task and assign tasks to be run in the correct sequence
+exports.build = series(cleanDist, parallel(minifyCSS, minifyHTML, copy));

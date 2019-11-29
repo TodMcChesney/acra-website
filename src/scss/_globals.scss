@@ -25,7 +25,7 @@ a {
     }
 }
 
-.site_title {
+.site-title {
     font: bold 1.4em Ubuntu;
 }
 
@@ -100,7 +100,7 @@ header {
     height: 76px;
 }
 
-#facebook-icon {
+.facebook-icon {
     float: right;
 
     img {
@@ -109,7 +109,7 @@ header {
     }
 }
 
-#nav-icon {
+.nav-icon {
     display: none;
     margin: 15px 0;
     background: $med-blue url("../img/nav-icon.svg") center;
@@ -152,7 +152,7 @@ nav {
    ========================================================================== */
 
 @media #{$mobile} {
-    #nav-icon {
+    .nav-icon {
         display: inline-block;
         border-radius: 5px;
     }
@@ -207,7 +207,7 @@ section {
     box-sizing: border-box;
 }
 
-#logo {
+.logo {
     margin: 3%;
     width: 33%;
 }

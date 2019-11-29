@@ -1,4 +1,3 @@
-/*! AlabamaCupRaces.com by Tod McChesney | CodeScribe.net */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -458,23 +457,23 @@ body {
 }
 
 .container {
-  max-width: 900px;
-  padding: 0 5%;
   margin: 0 auto;
+  padding: 0 5%;
+  max-width: 900px;
 }
 
 a {
-  color: #009ded;
-  text-decoration: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  text-decoration: none;
+  color: #009ded;
 }
 a:hover {
-  color: #0074b0;
   text-decoration: underline;
+  color: #0074b0;
 }
 
-.site_title {
+.site-title {
   font: bold 1.4em Ubuntu;
 }
 
@@ -485,7 +484,7 @@ h3 {
 }
 
 h1 {
-  margin: 0 0 1em 0;
+  margin: 0 0 1em;
   font-size: 1.2em;
 }
 
@@ -497,7 +496,7 @@ h3 {
   font-size: 1em;
 }
 
-abbr[title] {
+abbr [title] {
   text-decoration: none;
 }
 
@@ -509,11 +508,11 @@ abbr[title] {
   text-decoration: underline;
 }
 
-/* Clearfix for float*/
+/* Clearfix for float */
 .cf::after {
   display: table;
-  content: "";
   clear: both;
+  content: "";
 }
 
 /* Fade in for page loads */
@@ -534,53 +533,53 @@ abbr[title] {
   }
 }
 .fade-in {
-  opacity: 0;
   -webkit-animation: fadeIn ease-in 1;
           animation: fadeIn ease-in 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
   -webkit-animation-duration: 0.7s;
           animation-duration: 0.7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 /* ==========================================================================
    Header
    ========================================================================== */
 header {
-  width: 100%;
-  height: 76px;
   border-bottom: 3px solid #009ded;
   background-color: #1f1f1f;
+  width: 100%;
+  height: 76px;
 }
 
-#facebook-icon {
+.facebook-icon {
   float: right;
 }
-#facebook-icon img {
-  border-radius: 5px;
+.facebook-icon img {
   margin: 15px 0;
+  border-radius: 5px;
 }
 
-#nav-icon {
+.nav-icon {
   display: none;
-  width: 46px;
-  height: 46px;
   margin: 15px 0;
   background: #009ded url("../img/nav-icon.svg") center;
+  width: 46px;
+  height: 46px;
 }
 
 nav ul {
   display: -webkit-box;
   display: flex;
-  padding: 28px 0;
   margin: 0 auto;
+  padding: 28px 0;
   list-style: none;
 }
 nav li {
-  font-family: Ubuntu;
-  font-weight: 700;
-  font-size: 1.08em;
   text-align: center;
+  font-family: Ubuntu;
+  font-size: 1.08em;
+  font-weight: 700;
 }
 nav li a {
   /* Makes clickable area of link larger */
@@ -597,29 +596,30 @@ nav a:hover {
 /* Mobile Nav Media Query
    ========================================================================== */
 @media only screen and (max-width : 874px) {
-  #nav-icon {
+  .nav-icon {
     display: inline-block;
     border-radius: 5px;
   }
 
-  nav ul,
-nav nav:active ul {
+  nav ul, nav nav:active ul {
+    display: none;
     position: absolute;
-    z-index: 9;
     top: 57px;
     left: 5%;
-    display: none;
-    width: 122px;
-    padding: 10px;
+    z-index: 9;
     border: 4px solid #009ded;
-    border-radius: 0 5px 5px 5px;
+    border-radius: 0 5px 5px;
     background-color: #fff;
+    padding: 10px;
+    width: 122px;
   }
   nav li {
     width: 100%;
   }
-  nav:hover ul,
-nav a {
+  nav:hover ul {
+    display: block;
+  }
+  nav a {
     display: block;
   }
 }
@@ -627,50 +627,50 @@ nav a {
    Section
    ========================================================================== */
 section {
-  padding: 15px 0 10px 0;
   background-color: #fff;
+  padding: 15px 0 10px;
 }
 
 .banner {
-  box-sizing: border-box;
-  width: 100%;
   border: 3px solid #1f1f1f;
   border-radius: 5px;
   background-size: cover;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#logo {
-  width: 33%;
+.logo {
   margin: 3%;
+  width: 33%;
 }
 
 .form {
-  width: 100%;
-  padding: 3% 3% 0;
   margin: 15px auto;
+  padding: 3% 3% 0;
+  width: 100%;
 }
 
 .dark-box {
-  box-sizing: border-box;
   border-radius: 5px;
   background-color: #1f1f1f;
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
    Footer
    ========================================================================== */
 footer {
-  width: 100%;
-  height: 100%;
   border-top: 3px solid #009ded;
   background-color: #1f1f1f;
+  width: 100%;
+  height: 100%;
   color: #fff;
 }
 footer p {
   margin: 22px 0;
   text-align: center;
-  font-size: 0.85em;
   line-height: 1.5;
+  font-size: 0.85em;
 }
 
 /* ==========================================================================
@@ -680,35 +680,35 @@ footer p {
   background-image: url("../img/home-page-banner-900x257.jpg");
 }
 
-#content-home {
+.content-home {
   float: left;
-  width: 58%;
   margin-right: 3%;
+  width: 58%;
 }
-#content-home .first-paragraph {
+.content-home .first-paragraph {
   margin-top: 0;
 }
 @media only screen and (max-width : 874px) {
-  #content-home {
-    width: 100%;
+  .content-home {
     margin: 0;
+    width: 100%;
   }
 }
 
 .content-home-sidebar {
   float: left;
+  margin-bottom: 15px;
+  padding: 0 2%;
   width: 35%;
   box-sizing: content-box;
-  padding: 0 2%;
-  margin-bottom: 15px;
 }
 @media only screen and (max-width : 874px) {
   .content-home-sidebar {
-    width: 96%;
     margin-bottom: 10px;
+    width: 96%;
   }
 }
-.content-home-sidebar a:hover {
+.content-home-sidebar a :hover {
   text-decoration: none;
 }
 .content-home-sidebar ul {
@@ -727,8 +727,8 @@ footer p {
 @media only screen and (max-width : 740px) {
   .content-home-sidebar__lists {
     float: none;
-    max-width: 262px;
     margin: 0 auto;
+    max-width: 262px;
   }
 }
 
@@ -755,10 +755,10 @@ footer p {
 
 .collage img {
   display: block;
-  box-sizing: border-box;
-  width: 100%;
   border: 3px solid #1f1f1f;
   border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -775,7 +775,7 @@ footer p {
   background-image: url("../img/results-page-banner-900x257.jpg");
 }
 
-#content-results {
+.content-results {
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
@@ -784,8 +784,8 @@ footer p {
 }
 
 .content-results-lists {
-  padding: 10px;
   margin: 15px;
+  padding: 10px;
 }
 .content-results-lists h2,
 .content-results-lists ul {
@@ -813,14 +813,14 @@ footer p {
 
 .volunteers-signup-form {
   float: right;
-  padding: 15px;
   margin: 0 0 15px 15px;
+  padding: 15px;
 }
 @media only screen and (max-width : 740px) {
   .volunteers-signup-form {
     float: none;
-    width: 100%;
     margin-left: 0;
+    width: 100%;
   }
 }
 
@@ -834,28 +834,28 @@ footer p {
 .content-officers {
   position: relative;
   float: left;
-  width: 46%;
   margin: 15px;
+  width: 46%;
 }
 @media only screen and (max-width : 874px) {
   .content-officers {
-    width: 100%;
     margin: 10px 0;
+    width: 100%;
   }
 }
 .content-officers img {
   display: block;
-  box-sizing: border-box;
-  width: 100%;
   border: 3px solid #1f1f1f;
   border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .content-officers h3 {
   position: absolute;
   bottom: 8px;
   left: 16px;
-  color: #fff;
   text-shadow: 0 0 5px #1f1f1f;
+  color: #fff;
 }
 
 /* ==========================================================================

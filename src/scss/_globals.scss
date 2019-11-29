@@ -9,19 +9,19 @@ body {
 }
 
 .container {
-    max-width: 900px;
-    padding: 0 5%;
     margin: 0 auto;
+    padding: 0 5%;
+    max-width: 900px;
 }
 
 a {
-    color: $med-blue;
+    transition: 0.3s;
     text-decoration: none;
-    transition: .3s;
+    color: $med-blue;
 
     &:hover {
-        color: $dark-blue;
         text-decoration: underline;
+        color: $dark-blue;
     }
 }
 
@@ -36,7 +36,7 @@ h3 {
 }
 
 h1 {
-    margin: 0 0 1em 0;
+    margin: 0 0 1em;
     font-size: 1.2em;
 }
 
@@ -48,8 +48,10 @@ h3 {
     font-size: 1em;
 }
 
-abbr[title] {
-    text-decoration: none;
+abbr {
+    [title] {
+        text-decoration: none;
+    }
 }
 
 .bold {
@@ -60,72 +62,74 @@ abbr[title] {
     text-decoration: underline;
 }
 
-/* Clearfix for float*/
-.cf::after {
-    display: table;
-    content: "";
-    clear: both;
+/* Clearfix for float */
+.cf {
+    &::after {
+        display: table;
+        clear: both;
+        content: "";
+    }
 }
 
 /* Fade in for page loads */
 @keyframes fadeIn {
     from {
-        opacity:0;
-    } to {
-        opacity:1;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
 .fade-in {
-    opacity: 0;
     animation: fadeIn ease-in 1;
+    animation-duration: 0.7s;
     animation-fill-mode: forwards;
-    animation-duration: .7s;
+    opacity: 0;
 }
-
 
 /* ==========================================================================
    Header
    ========================================================================== */
 
 header {
-    width: 100%;
-    height: 76px;
     border-bottom: 3px solid $med-blue;
     background-color: $dark-grey;
+    width: 100%;
+    height: 76px;
 }
 
 #facebook-icon {
     float: right;
 
     img {
-        border-radius: 5px;
         margin: 15px 0;
+        border-radius: 5px;
     }
 }
 
 #nav-icon {
     display: none;
-    width: 46px;
-    height: 46px;
     margin: 15px 0;
     background: $med-blue url("../img/nav-icon.svg") center;
+    width: 46px;
+    height: 46px;
 }
 
 nav {
-
     ul {
         display: flex;
-        padding: 28px 0;
         margin: 0 auto;
+        padding: 28px 0;
         list-style: none;
     }
 
     li {
-        font-family: Ubuntu;
-        font-weight: 700;
-        font-size: 1.08em;
         text-align: center;
+        font-family: Ubuntu;
+        font-size: 1.08em;
+        font-weight: 700;
 
         a {
             /* Makes clickable area of link larger */
@@ -133,8 +137,10 @@ nav {
         }
     }
 
-    a:hover {
-        text-decoration: none;
+    a {
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 
@@ -152,82 +158,87 @@ nav {
     }
 
     nav {
-        ul,
-        nav:active ul {
-            position: absolute;
-            z-index: 9;
-            top: 57px;
-            left: 5%;
-            display: none;
-            width: 122px;
-            padding: 10px;
-            border: 4px solid $med-blue;
-            border-radius: 0 5px 5px 5px;
-            background-color: $white;
+        &,
+        & &:active {
+            ul {
+                display: none;
+                position: absolute;
+                top: 57px;
+                left: 5%;
+                z-index: 9;
+                border: 4px solid $med-blue;
+                border-radius: 0 5px 5px;
+                background-color: $white;
+                padding: 10px;
+                width: 122px;
+            }
         }
 
         li {
             width: 100%;
         }
 
-        &:hover ul,
+        &:hover {
+            ul {
+                display: block;
+            }
+        }
+
         a {
             display: block;
         }
     }
 }
 
-
 /* ==========================================================================
    Section
    ========================================================================== */
 
 section {
-    padding: 15px 0 10px 0;
     background-color: $white;
+    padding: 15px 0 10px;
 }
 
 .banner {
-    box-sizing: border-box;
-    width: 100%;
     border: 3px solid $dark-grey;
     border-radius: 5px;
     background-size: cover;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #logo {
-    width: 33%;
     margin: 3%;
+    width: 33%;
 }
 
 .form {
-    width: 100%;
-    padding: 3% 3% 0;
     margin: 15px auto;
+    padding: 3% 3% 0;
+    width: 100%;
 }
 
 .dark-box {
-    box-sizing: border-box;
     border-radius: 5px;
     background-color: $dark-grey;
+    box-sizing: border-box;
 }
-
 
 /* ==========================================================================
    Footer
    ========================================================================== */
 
 footer {
-    width: 100%;
-    height: 100%;
     border-top: 3px solid $med-blue;
     background-color: $dark-grey;
+    width: 100%;
+    height: 100%;
     color: $text-white;
 
     p {
         margin: 22px 0;
         text-align: center;
-        font-size: .85em;
         line-height: 1.5;
+        font-size: 0.85em;
     }
 }

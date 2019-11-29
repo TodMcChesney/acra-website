@@ -18,12 +18,12 @@
 
 .volunteers-signup-form {
     float: right;
-    padding: 15px;
     margin: 0 0 15px 15px;
+    padding: 15px;
 
     @media #{$mobile-sidebar} {
         float: none;
-        width: 100%;
         margin-left: 0;
+        width: 100%;
     }
 }

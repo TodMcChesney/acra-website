@@ -8,7 +8,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require ('autoprefixer');
 const browserSync = require('browser-sync').create();
 const rm = require('gulp-rm');
-const rename = require('gulp-rename');
+const concat = require('gulp-concat');
 const cssnano = require('cssnano');
 const htmlreplace = require('gulp-html-replace');
 const htmlmin = require('gulp-htmlmin');
@@ -21,7 +21,10 @@ const htmlmin = require('gulp-htmlmin');
 function compileSass() {
     return src('src/scss/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({
+            indentWidth: 4,
+            linefeed: 'crlf'
+        }).on('error', sass.logError))
         .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('./maps'))
         .pipe(dest('src/css'));
@@ -66,13 +69,11 @@ function cleanDist() {
     .pipe(rm());
 }
 
-// Minify CSS
+// Minify concatenated CSS
 function minifyCSS(done) {
-    src('src/css/styles.css')
+    src(['src/css/normalize.css', 'src/css/styles.css'])
+    .pipe(concat('styles.min.css'))
     .pipe(postcss([cssnano()]))
-    .pipe(rename({
-        suffix: '.min'
-    }))
     .pipe(dest('dist/css'));
     done();
 }

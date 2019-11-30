@@ -10,8 +10,6 @@ get gulp setup.
 
 ### Requires
 - Node.js
-- Ruby
-- Sass >= v3.4
 - gulp-cli (installed globally)
 
 ### Install
@@ -40,4 +38,4 @@ and copies all production files to the clean 'dist' folder.
 ## License
 This repository is not licensed.
 
-Alabama Cup Racing Association © 2017 All Rights Reserved
+Alabama Cup Racing Association © All Rights Reserved

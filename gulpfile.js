@@ -82,7 +82,7 @@ function minifyCSS(done) {
 function minifyHTML(done) {
     src('src/*.html')
     .pipe(htmlreplace({
-        'css': '/css/styles.min.css'
+        css: '/css/styles.min.css'
     }))
     .pipe(htmlmin({
         collapseWhitespace: true,
